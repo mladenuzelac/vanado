@@ -1,0 +1,40 @@
+﻿@model IEnumerable<vanado.Models.Kvar>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Kvarovi</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-outline-success btn-sm">Create new</a>
+</p>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Stroj</th>
+            <th>Naziv</th>
+            <th>Opis</th>
+            <th>Status</th>
+            <th>Datoteka</th>
+            <th>Prioritet</th>
+            <th>Vrijeme prijave</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+        {
+        <tr>
+            <td>@Html.DisplayFor(modeliItem => item.stroj.naziv)</td>
+            <td>@Html.DisplayFor(modeliItem => item.naziv)</td>
+            <td>@Html.DisplayFor(modeliItem => item.opis)</td>
+            <td>@Html.DisplayFor(modeliItem => item.status)</td>
+            <td>@Html.DisplayFor(modeliItem => item.datoteka)</td>
+            <td>@Html.DisplayFor(modeliItem => item.)</td>
+            <td>@Html.DisplayFor(modeliItem => item.stroj.naziv)</td>
+            <td>@Html.DisplayFor(modeliItem => item.stroj.naziv)</td>
+            <td>@Html.DisplayFor(modeliItem => item.stroj.naziv)</td>
+        </tr>
+        }
+    </tbody>
+</table>

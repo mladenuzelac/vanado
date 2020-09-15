@@ -1,0 +1,49 @@
+﻿@model IEnumerable<vanado.Models.PocetnaDTO>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Dobrodošli</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+
+<table>
+    <thead>
+        <tr>
+            <th>Ime kvara</th>
+            <th>Opis kvara</th>
+            <th>Stroj</th>
+            <th>Popravljen</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+        {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.kvar.naziv)</td>
+            <td>@Html.DisplayFor(modelItem => item.kvar.opis)</td>
+            <td>@Html.DisplayFor(modelItem => item.stroj.naziv) </td>
+            <td>@Html.DisplayFor(modelItem => item.kvar.status) </td>
+            <td>
+                <!-- Gumb za aktivaciju status-->
+
+                <form asp-controller="Home" asp-action="AzurirajKvar" asp-route-personid="@item.kvar.id">
+                    <button type="submit" class="btn btn-outline-danger btn-sm">Delete</button>
+                </form>
+
+            </td>
+        </tr>
+        }
+
+
+
+    </tbody>
+</table>
+<script>
+
+
+
+</script>
